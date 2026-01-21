@@ -1,0 +1,43 @@
+### Output configuration
+output eDP-1 scale 1.36
+output * render_bit_depth 10
+# Forzar 4800K de forma constante (High > Low)
+exec wlsunset -t 4800 -T 4801
+exec_always swaybg -i ~/.config/sway/naturesurreal.png -m fill
+
+
+### Idle configuration
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
+
+### Input configuration
+ input "type:touchpad" {
+        # Permite hacer clic tocando la superficie (sin hundir el botón)
+        tap enabled
+
+        # Scroll natural (como en un smartphone, hacia arriba sube el contenido)
+        natural_scroll enabled
+
+        # Desactiva el touchpad mientras escribes (evita saltos del cursor)
+        dwt enabled
+
+        # Velocidad del puntero (ajusta de -1.0 a 1.0)
+        pointer_accel 0.3
+
+        # Emulación de scroll con dos dedos
+        scroll_method two_finger
+
+        # Clic con dos dedos para botón derecho, tres para botón central
+        click_method clickfinger
+   }
+
+   # Cambiar de workspace deslizando tres dedos
+   bindgesture swipe:right workspace prev
+   bindgesture swipe:left workspace next
+
+    input "type:keyboard" {
+        xkb_layout "es"
+    }

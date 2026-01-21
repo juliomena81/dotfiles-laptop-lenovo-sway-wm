@@ -1,0 +1,41 @@
+window {
+    margin: 0px;
+    border: 1px solid #222222;
+    background-color: #000000; 
+    font-family: "JetBrainsMonoNerdFontMono";
+    font-size: 15px;
+}
+
+#input {
+    margin: 10px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    color: #eeeeee;
+    background-color: #111111; 
+    padding: 8px;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: #000000;
+}
+
+#outer-box {
+    margin: 5px;
+    background-color: #000000;
+}
+
+#text {
+    margin: 5px;
+    color: #bbbbbb; 
+}
+
+#selected {
+    background-color: #222222; 
+    border-radius: 5px;
+}
+
+#text:selected {
+    color: #ffffff; 
+    font-weight: bold;
+}

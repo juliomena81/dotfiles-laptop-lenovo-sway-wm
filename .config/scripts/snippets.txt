@@ -1,0 +1,4 @@
+Mi correo electrónico: usuario@ejemplo.com
+Dirección de envío: Calle Falsa 123, Madrid
+Snippet de código: console.log("Hola Mundo");
+Firma profesional: Atentamente, [Tu Nombre]

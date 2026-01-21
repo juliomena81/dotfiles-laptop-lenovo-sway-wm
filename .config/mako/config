@@ -1,0 +1,34 @@
+# --- CONFIGURACIÓN MAKO DARK ---
+font=JetBrainsMonoNerdFontMono 11
+width=350
+height=150
+margin=15
+padding=15
+border-size=1
+border-radius=5
+icons=0
+
+# Colores (Estilo Wofi Dark)
+background-color=#000000
+text-color=#bbbbbb
+border-color=#222222
+progress-color=over #333333
+
+# Duración y comportamiento
+default-timeout=5000
+group-by=category
+
+[urgency=high]
+border-color=#f38ba8
+text-color=#ffffff
+default-timeout=0
+
+[category=volume]
+anchor=center
+width=250
+height=60
+background-color=#111111
+border-color=#333333
+border-size=2
+
+progress-color=over #a6e3a1

@@ -1,0 +1,12 @@
+[flavor]
+use = "catppuccin-mocha"
+
+[manager]
+show_hidden = true
+show_symlink = true
+scrolloff = 5
+
+[preview]
+tab_size = 2
+max_width = 1000
+max_height = 1000

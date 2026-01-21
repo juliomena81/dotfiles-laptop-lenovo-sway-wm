@@ -1,0 +1,76 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 24,
+    "spacing": 10,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor", "custom/vpn", "battery", "custom/lenovo-battery", "cpu", "memory", "pulseaudio", "tray"],
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used}GB"
+    },
+    "battery": {
+    "states": {
+        "good": 80,
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true
+},
+    "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-muted": "  Silenciado",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "tooltip": true
+},
+    "clock": {
+        "format": "{:%H:%M - %d/%m}"
+    },
+    "custom/lenovo-battery": {
+        "exec": "~/.config/waybar/scripts/battery-mode.sh",
+        "interval": 5,
+        "format": "{}",
+        "signal": 10,
+        "on-click": "echo 1 | sudo /usr/bin/tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode && pkill -RTMIN+10 waybar",
+        "on-click-right": "echo 0 | sudo /usr/bin/tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode && pkill -RTMIN+10 waybar"
+    },
+
+    "custom/vpn": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 5,
+    "exec": "/home/julio/.config/waybar/scripts/vpn_status.sh",
+    "on-click": "/home/julio/.config/waybar/scripts/vpn_menu.sh",
+    "on-click-right": "nmcli connection down $(nmcli -t -f NAME,TYPE connection show --active | grep wireguard | cut -d: -f1)",
+    "tooltip": false
+},
+"idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+    }
+}
+}

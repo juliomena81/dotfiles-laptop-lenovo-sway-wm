@@ -1,0 +1,27 @@
+# --- Neovim Runtime Data ---
+.netrwhist
+undo/
+shada/
+*.swp
+*.swo
+*.swn
+*.bak
+*.log
+
+# --- Plugin Manager Data ---
+
+/lazy-lock.json
+
+# --- LSP & Tooling Garbage ---
+
+.virtualenv/
+.venv/
+.python-learn/
+.ipynb_checkpoints/
+.ropeproject/
+
+# --- System & OS Garbage ---
+.DS_Store
+Thumbs.db
+
+

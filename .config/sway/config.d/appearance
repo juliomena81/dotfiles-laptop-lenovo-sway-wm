@@ -1,0 +1,40 @@
+# WayBar
+bar {
+    swaybar_command waybar
+}
+
+# --- CONFIGURACIÓN DE GAPS ---
+smart_gaps off
+gaps inner 17
+gaps outer 5
+
+# Control de gaps con números
+bindsym $mod+0 gaps inner all set 17; gaps outer all set 5
+bindsym $mod+8 gaps inner all minus 5
+
+default_border none
+default_floating_border none
+for_window [class=".*"] border none
+for_window [title=".*"] border none
+
+
+# --- ESQUEMA DE COLORES SWAY (DARK) ---
+
+# class                 borde   fondo   texto   indicador borde_hijo
+client.focused          #000000 #000000 #ffffff #000000   #000000
+client.focused_inactive #000000 #000000 #bbbbbb #000000   #000000
+client.unfocused        #000000 #000000 #888888 #000000   #000000
+client.urgent           #000000 #000000 #ffffff #000000   #000000
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
+client.background       #000000
+
+### GTK Themes - Icons - Cursor - Font ###
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Juno-v40'
+    gsettings set $gnome-schema icon-theme 'Tela-grey-dark'
+    gsettings set $gnome-schema font-name 'JetBrainsMonoNerdFontMono'
+}
+
+seat seat0 xcursor_theme Sweet-cursors 22
