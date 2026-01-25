@@ -62,6 +62,8 @@ alias vms='virt-manager'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias dash='~/.local/bin/dashboard.lua'
+
 # --- Keybindings (Fix para teclas Home/End/Del) ---
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
