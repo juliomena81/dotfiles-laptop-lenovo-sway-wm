@@ -21,7 +21,7 @@
     bindsym $mod+Shift+e exec wlogout
 
     # Bloqueo de pantalla manual ($mod+L)
-    #bindsym $mod+l exec swaylock -f -c 000000
+    bindsym $mod+Shift+q exec swaylock -f -c 000000
 
     # Inhibir el modo reposo temporalmente (Super + i)
     bindsym $mod+i exec pkill -SIGUSR1 swayidle
@@ -153,4 +153,8 @@ bindsym $mod+r mode "resize"
     # Abrir btop en una ventana flotante
     bindsym $mod+Shift+m exec foot --app-id=btop_floating btop
 
+## APLICACIONES
 
+bindsym $mod+Shift+g exec chromium
+bindsym $mod+Shift+w exec librewolf
+bindsym $mod+Shift+t exec thunar
