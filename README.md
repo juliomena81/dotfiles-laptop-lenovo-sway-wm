@@ -15,11 +15,11 @@ Configuración minimalista y de alto rendimiento optimizada para hardware AMD Me
   ![Desktop Setup](.config/screenshots/desktop_bottom_bar.png)
 
   ### 🎧 Bluetooth Dashboard (Lua)
-  *Script personalizado en Lua para el control y estado de los auriculares ALE-HOP.*
+  *Script personalizado en Lua para el control y estado de los auriculares ALE-HOP, Yazi y fzf.*
   ![Bluetooth Dash](.config/screenshots/terminales_autotiling.png)
 
   ### 🛠️ Gestión de Ventanas (Autotiling)
-  *Demostración de los gaps y el flujo dinámico de ventanas.*
+  *Wofi*
   ![Workflow](.config/screenshots/wofi.png)
 
 </details>
