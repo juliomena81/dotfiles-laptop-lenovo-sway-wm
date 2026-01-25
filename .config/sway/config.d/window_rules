@@ -1,13 +1,3 @@
-# Reglas para enviar apps al Scratchpad automáticamente
-for_window [app_id="Thunar"] move scratchpad
-for_window [app_id="librewolf"] move scratchpad
-for_window [app_id="chromium"] move scratchpad
-
-# Forzar que se abran con un tamaño cómodo y centrados
-for_window [app_id="Thunar"] floating enable, resize set 1000 700, move position center
-for_window [app_id="librewolf"] floating enable, resize set 1200 800, move position center
-for_window [app_id="chromium"] floating enable, resize set 1200 800, move position center
-
 # Evitar que la pantalla se apague si mpv está reproduciendo
 for_window [class="mpv"] inhibit_idle visible
 

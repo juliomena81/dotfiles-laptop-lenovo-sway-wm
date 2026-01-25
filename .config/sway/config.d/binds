@@ -158,3 +158,4 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+g exec chromium
 bindsym $mod+Shift+w exec librewolf
 bindsym $mod+Shift+t exec thunar
+
