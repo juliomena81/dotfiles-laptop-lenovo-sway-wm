@@ -10,15 +10,15 @@ Configuración minimalista y de alto rendimiento optimizada para hardware AMD Me
 <details>
   <summary>Click para ver capturas de pantalla</summary>
 
-  ### 🖥️ Escritorio (Gaps + Waybar Bottom)
+  ### 🖥️ Escritorio (Waybar Bottom)
   *Configuración minimalista con el panel en la parte inferior para maximizar el área de trabajo.*
   ![Desktop Setup](.config/screenshots/desktop_bottom_bar.png)
 
-  ### 🎧 Bluetooth Dashboard (Lua)
+  ### 🎧 Bluetooth Dashboard (Lua), FZF & Yazi
   *Script personalizado en Lua para el control y estado de los auriculares ALE-HOP, Yazi y fzf.*
   ![Bluetooth Dash](.config/screenshots/terminales_autotiling.png)
 
-  ### 🛠️ Gestión de Ventanas (Autotiling)
+  ### 🛠️ Lanzador de Aplicaciones
   *Wofi*
   ![Workflow](.config/screenshots/wofi.png)
 
