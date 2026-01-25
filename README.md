@@ -55,15 +55,15 @@ Instalación profesional orientada a la resiliencia de datos y seguridad:
 
 * **FS: BTRFS** con una estructura de subvolúmenes optimizada para snapshots:
 
-* `@` (root) y `@home` (datos de usuario).
+ * `@` (root) y `@home` (datos de usuario).
 
-* `@log` y `@cache` (excluidos de snapshots para ahorrar espacio).
+ * `@log` y `@cache` (excluidos de snapshots para ahorrar espacio).
 
-* `@libvirt` (aislamiento para VMs).
+ * `@libvirt` (aislamiento para VMs).
 
-* `@tmp` y `@swap` (gestión de archivos temporales y paginación).
+ * `@tmp` y `@swap` (gestión de archivos temporales y paginación).
 
-* `@snapshots` (almacenamiento de estados del sistema).
+ * `@snapshots` (almacenamiento de estados del sistema).
 
 <br>
 
