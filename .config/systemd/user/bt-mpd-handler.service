@@ -1,0 +1,14 @@
+[Unit]
+Description=Manejador MPD y Volumen ALE-HOP
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# Ejecuta el play y luego ajusta el volumen
+ExecStart=/usr/bin/mpc play
+ExecStartPost=%h/.local/bin/volume-adjust.lua
+ExecStop=/usr/bin/mpc pause
+
+[Install]
+WantedBy=default.target
+
