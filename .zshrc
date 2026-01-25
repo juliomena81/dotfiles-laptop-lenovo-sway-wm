@@ -54,7 +54,7 @@ alias tree='eza --tree --icons --level=2'
 # eza - fzf
 alias ftree='fzf --preview "eza --tree --color=always {}" --preview-window=right:50%'
 
-alias duf='duf --theme dark --style rounded'
+alias duf='duf --theme dark'
 alias ncdu='ncdu --color dark'
 
 # Virt Manager

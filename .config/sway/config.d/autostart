@@ -9,3 +9,4 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 ### Bluetooth Manager
 exec blueman-applet
 
+exec_always --no-startup-id autotiling
