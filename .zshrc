@@ -40,6 +40,7 @@ alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias v='nvim'
 alias update='sudo pacman -Syu'
+alias aur='paru -Su'
 
 # rm, cp , mv interactivo
 alias rm='rm -i'
