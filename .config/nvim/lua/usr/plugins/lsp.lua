@@ -18,16 +18,26 @@ return {
 
       -- 3. Configuración NATIVA (Neovim 0.11+)
       -- En lugar de lspconfig.server.setup, usamos vim.lsp.enable
-      
+
+      -- Astro
+      vim.lsp.enable("astro", { capabilities = capabilities })
+
+      -- Tailwind CSS
+      vim.lsp.enable("tailwindcss", {
+        capabilities = capabilities,
+        -- Extendemos filetypes para asegurar que entre en archivos Astro
+        filetypes = { "html", "css", "javascript", "typescript", "react", "astro" }
+      })
+
       -- Python
       vim.lsp.enable("pyright", { capabilities = capabilities })
-      
+
       -- Bash / Zsh
-      vim.lsp.enable("bashls", { 
+      vim.lsp.enable("bashls", {
         capabilities = capabilities,
-        filetypes = { "sh", "zsh" } 
+        filetypes = { "sh", "zsh" }
       })
-      
+
       -- Lua
       vim.lsp.enable("lua_ls", {
         capabilities = capabilities,
@@ -42,27 +52,28 @@ return {
       })
 
       vim.lsp.enable("cssls", {
-         capabilities = capabilities,
-         filetypes = { "css", "scss", "less" },
+        capabilities = capabilities,
+        filetypes = { "css", "scss", "less" },
       })
 
       vim.lsp.enable("emmet_ls", {
-         capabilities = capabilities,
-         filetypes = {
-            "html",
-            "css",
-            "javascript",
-            "typescript",
-            "vue",
-            "jsx",
-            "tsx",
-         },
-       })       
+        capabilities = capabilities,
+        filetypes = {
+          "html",
+          "css",
+          "javascript",
+          "typescript",
+          "vue",
+          "jsx",
+          "tsx",
+          "astro"
+        },
+      })
 
-       vim.lsp.enable("ruby_ls", {
-          capabilities = capabilities,
-          filetypes = { "ruby", "liquid", "html" },
-        })
+      vim.lsp.enable("ruby_ls", {
+        capabilities = capabilities,
+        filetypes = { "ruby", "liquid", "html" },
+      })
 
       -- 4. Mapeos (Se mantienen igual)
       vim.api.nvim_create_autocmd("LspAttach", {

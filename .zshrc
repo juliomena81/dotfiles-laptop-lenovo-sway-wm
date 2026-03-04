@@ -35,8 +35,8 @@ zstyle ':completion:*' menu select
 
 
 # --- Alias de Productividad ---
-alias ls='ls --color=auto'
-alias ll='ls -lh'
+#alias ls='ls --color=auto'
+#alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias v='nvim'
 alias update='sudo pacman -Syu'
