@@ -1,6 +1,6 @@
 #!/usr/bin/lua
 
--- Colores ANSI estándar
+-- Colores ANSI
 local blue     = "\27[34m"
 local green    = "\27[32m"
 local yellow   = "\27[33m"
@@ -26,7 +26,7 @@ local bat_color = (not bat_val or bat_val < 20) and red or (bat_val < 50 and yel
 local bitrate = cmd("mpc -f %bitrate% current")
 bitrate = (bitrate ~= "") and (bitrate .. " kbps") or "Idle"
 
--- Renderizado (Línea 35 corregida)
+-- Renderizado
 print("\n" .. bold .. lavender .. " 󰎆  MPD DASHBOARD" .. reset)
 print(string.format(" %s%-12s %s%s", blue, "󰋋 Device:", reset, "ALE-HOP 1712 mini"))
 print(string.format(" %s%-12s %s%s%s", blue, "󱐋 Battery:", bat_color, bat_display, reset))
