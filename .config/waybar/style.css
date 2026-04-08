@@ -1,0 +1,117 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMonoNerdFontMono", "Font Awesome 6 Free";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #000000;
+    border-top: 1px solid #222222; 
+    color: #bbbbbb;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #555555;
+    background-color: transparent;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+    background-color: #222222; 
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+#clock,
+#tray
+ {
+  border: none;
+  padding: 0 10px
+}
+
+#cpu,
+#memory,
+#battery,
+#pulseaudio,
+#custom-lenovo-battery
+  {
+    padding: 0 10px;
+    /* border-left: 1px solid #111111; */
+     border: 2px solid #bbbbbb;
+     border-radius: 10px;
+     padding: 0 10px;
+     margin: 5px;
+}
+
+
+#custom-lenovo-battery {
+    color: #cdd6f4;
+}
+
+#custom-vpn.connected {
+    color: #a6e3a1; 
+    border: 2px solid #a6e3a1;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 5px;
+}
+
+#custom-vpn.disconnected {
+    color: #f38ba8; 
+}
+
+#idle_inhibitor {
+    color: #ffffff;
+    padding: 0 10px;
+}
+#idle_inhibitor.activated {
+    color: #a6e3a1;
+}
+
+#battery {
+    background-color: #111111;
+    color: #ffffff;
+    border: 2px solid #333333;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+/* Estado Bueno (>80%): Verde Proton */
+#battery.good {
+    color: #a6e3a1;
+    border-color: #a6e3a1;
+}
+
+/* Estado Normal (entre 30% y 80%): Blanco/Gris */
+#battery.discharging {
+    color: #ffffff;
+}
+
+/* Estado Advertencia (<30%): Naranja */
+#battery.warning {
+    color: #fab387;
+    border-color: #fab387;
+}
+
+/* Estado Crítico (<15%): Rojo y parpadeo */
+#battery.critical {
+    color: #f38ba8;
+    border-color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Animación de parpadeo para emergencias */
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #111111;
+    }
+}

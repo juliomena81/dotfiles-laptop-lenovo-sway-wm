@@ -1,0 +1,12 @@
+show=drun
+lines=8
+location=center
+allow_images=false
+hide_scroll=true
+insensitive=true
+prompt=Buscar aplicaciones...
+terminal=foot
+width=400
+halign=fill
+filter_rate=100
+
