@@ -1,65 +1,3 @@
-# 📁 Dotfiles: Arch Linux on Lenovo 💻
-
-
-Configuración minimalista y de alto rendimiento optimizada para hardware AMD Mendocino. El entorno se basa en Sway con una arquitectura modular, automatización en Lua y un esquema de almacenamiento avanzado.
-
-<br>
-
-## 📸 Galería del Setup
-
-<details>
-  <summary>Click para ver capturas de pantalla</summary>
-
-  ### 🖥️ Escritorio (Waybar Bottom)
-  *Configuración minimalista con el panel en la parte inferior para maximizar el área de trabajo.*
-  ![Desktop Setup](.config/screenshots/desktop_bottom_bar.png)
-
-  ### 🎧 Bluetooth Dashboard (Lua), FZF & Yazi
-  *Script personalizado en Lua para el control y estado de los auriculares ALE-HOP, Yazi y fzf.*
-  ![Bluetooth Dash](.config/screenshots/terminales_autotiling.png)
-
-  ### 🛠️ Lanzador de Aplicaciones
-  *Wofi*
-  ![Workflow](.config/screenshots/wofi.png)
-
-</details>
-
-<br>
-
-## 🛠️ Stack Tecnológico & Hardware
-
-
-* **Laptop:** Lenovo (AMD Ryzen con **Radeon 610M** Graphics).
-
-* **OS:** [Arch Linux](https://archlinux.org) (Repos: Core, Extra, [**Chaotic-AUR**](https://github.com/chaotic-aur)).
-
-* **AUR Helper:** `paru`.
-
-* **WM:** [Sway](https://github.com/swaywm/sway) + **Autotiling** (gestión dinámica de ventanas).
-
-* **Shell:** `zsh` + `starship` + `JetBrainsMono NF`.
-
-* **File Manager:** `yazi` (CLI).
-
-* **Audio:** `mpd` + `ncmpcpp` + `pipewire`.
-
-<br>
-
-## 🏗️ Sistema de Archivos & Seguridad
-
-Instalación profesional orientada a la resiliencia de datos y seguridad:
-
-* **Cifrado:** **LUKS** (Full Disk Encryption).
-
-* **Memoria:** **ZRAM** para compresión de RAM + **Swapfile** de respaldo.
-
-* **FS: BTRFS** con una estructura de subvolúmenes optimizada para snapshots:
-
- * `@` (root) y `@home` (datos de usuario).
-
- * `@log` y `@cache` (excluidos de snapshots para ahorrar espacio).
-
- * `@libvirt` (aislamiento para VMs).
 # 📁 Dotfiles: Arch Linux on Lenovo (AMD Mendocino)
 
 **Sway WM | Btrfs + LUKS | Lua Automation**
@@ -78,6 +16,11 @@ Entorno minimalista de alto rendimiento optimizado para la Radeon 610M. Una arqu
   ### 🎧 Bluetooth Dashboard (Lua), FZF & Yazi
   *Script personalizado en Lua para el control y estado de los auriculares ALE-HOP, Yazi y fzf.*
   ![Bluetooth Dash](.config/screenshots/terminales_autotiling.png)
+
+  ### 🛠️ Lanzador de Aplicaciones
+  *Wofi*
+  ![Workflow](.config/screenshots/wofi.png)
+  
 </details>
 
 <br />
