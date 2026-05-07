@@ -1,31 +1,35 @@
 {
     "layer": "top",
     "position": "bottom",
-    "height": 24,
-    "spacing": 10,
+    "height": 32,
+    "spacing": 5,
+    "margin-bottom": 2,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "custom/vpn", "battery", "custom/lenovo-battery", "cpu", "memory", "pulseaudio", "tray"],
+    "modules-right": ["idle_inhibitor", "cpu", "memory", "custom/lenovo-battery", "battery", "pulseaudio", "tray"],
 
     "cpu": {
         "interval": 10,
-        "format": " {usage}%"
+        "format": "󰻠 {usage}%"
     },
     "memory": {
         "interval": 30,
-        "format": " {used}GB"
+        "format": "󰍛 {used}GB"
     },
+
     "battery": {
     "states": {
         "good": 80,
         "warning": 30,
         "critical": 15
     },
-    "format": "{icon}  {capacity}%",
-    "format-charging": "  {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": {
+      "default": ["󰁺", "󰁽", "󰁿", "󰂁", "󰁹"],
+      "charging": ["󰁻", "󰁽", "󰁿", "󰂁", "󰂄"]
+    },
     "tooltip": true
 },
     "pulseaudio": {
@@ -36,17 +40,14 @@
         "headphone": "",
         "hands-free": "",
         "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", "", ""]
+        "default": ["", "󰖀", "󰕾"]
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol",
     "tooltip": true
 },
     "clock": {
-        "format": "{:%H:%M - %d/%m}"
+        "format": "{:%d %b %Y - %H:%M %p}"
     },
     "custom/lenovo-battery": {
         "exec": "~/.config/waybar/scripts/battery-mode.sh",
@@ -69,8 +70,8 @@
 "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-        "activated": " ",
-        "deactivated": " "
+        "activated": "󰫢",
+        "deactivated": "󰫣"
     }
 }
 }

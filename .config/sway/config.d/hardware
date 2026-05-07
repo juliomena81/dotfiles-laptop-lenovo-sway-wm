@@ -1,9 +1,12 @@
 ### Output configuration
+
+output eDP-1 bg ~/.config/sway/wallpaper.jpg fill
+output eDP-1 resolution 1920x1080
 output eDP-1 scale 1.36
-output * render_bit_depth 10
+output * render_bit_depth 6
 # Forzar 4800K de forma constante (High > Low)
-exec wlsunset -t 4800 -T 4801
-exec_always swaybg -i ~/.config/sway/naturesurreal.png -m fill
+exec wlsunset -t 6200 -T 6201
+#exec_always swaybg -i ~/.config/sway/naturesurreal.png -m fill
 
 
 ### Idle configuration

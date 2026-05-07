@@ -1,3 +1,41 @@
+[[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
+[[ -f ~/.config/zsh/functions.zsh ]] && source ~/.config/zsh/functions.zsh
+[[ -f ~/.config/zsh/functions.zsh ]] && source ~/.config/zsh/binds.zsh
+
+zmodload zsh/zprof
+
+zstyle ':completion:*' cache-path "$HOME/.cache/zsh/zcompcache"
+zstyle ':completion:*' use-cache on
+
+autoload -Uz compinit
+compinit -C
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Z-a}'
+
+# --- Configuración de Historial ---
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt APPEND_HISTORY      # No sobrescribir, añadir
+setopt INC_APPEND_HISTORY  # Guardar inmediatamente
+setopt SHARE_HISTORY      # Compartir entre terminales
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+
+# --- Plugins ---
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 
+source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+source /usr/share/doc/find-the-command/ftc.zsh askfirst
+source /usr/share/zsh/plugins/zpy/zpy.plugin.zsh
+source /usr/share/zsh/plugins/zsh-bat/zsh-bat.plugin.zsh
+source /usr/share/zsh/plugins/zsh-archlinux/archlinux.plugin.zsh
+source /usr/share/zsh/plugins/alt-and-select/alt-and-select.plugin.zsh
+
+## Theme
+source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+
 # Integración de fzf
 source <(fzf --zsh)
 source /usr/share/fzf/key-bindings.zsh
@@ -8,78 +46,19 @@ eval "$(zoxide init zsh --cmd cd)"
 # Desplegable fzf
 alias zi='zoxide query -i'
 
-# Starship Prompt
-eval "$(starship init zsh)"
-
-# --- Configuración de Historial ---
-HISTFILE=~/.zsh_history
-HISTSIZE=5000
-SAVEHIST=5000
-setopt APPEND_HISTORY      # No sobrescribir, añadir
-setopt INC_APPEND_HISTORY  # Guardar inmediatamente
-setopt SHARE_HISTORY      # Compartir entre terminales
-
-# --- Completado Automático ---
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Z-a}' # Case insensitive
-
-# --- Plugins ---
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-source /usr/share/doc/find-the-command/ftc.zsh askfirst
-source /usr/share/zsh/plugins/zpy/zpy.plugin.zsh
-
-zstyle ':completion:*' menu select
 
 
 
-# --- Alias de Productividad ---
-#alias ls='ls --color=auto'
-#alias ll='ls -lh'
-alias grep='grep --color=auto'
-alias v='nvim'
-alias update='sudo pacman -Syu'
-alias aur='paru -Su'
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# rm, cp , mv interactivo
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
 
-# eza (ls)
-alias ls='eza --icons --group-directories-first'
-alias ll='eza -lh --icons --group-directories-first'
-# eza (tree)
-alias tree='eza --tree --icons --level=2'
-# eza - fzf
-alias ftree='fzf --preview "eza --tree --color=always {}" --preview-window=right:50%'
 
-alias duf='duf --theme dark'
-alias ncdu='ncdu --color dark'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Virt Manager
-alias vms='virt-manager'
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/julio/.lmstudio/bin"
+# End of LM Studio CLI section
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-alias dash='~/.local/bin/dashboard.lua'
-
-# --- Keybindings (Fix para teclas Home/End/Del) ---
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[3~" delete-char
-
-# FZF
-export FZF_DEFAULT_OPTS="--color=bg+:#222222,bg:-1,spinner:#f5e0dc,hl:#f38ba8,fg:#bbbbbb,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc,marker:#f5e0dc,fg+:#ffffff,prompt:#cba6f7,hl+:#f38ba8"
-
-# yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}

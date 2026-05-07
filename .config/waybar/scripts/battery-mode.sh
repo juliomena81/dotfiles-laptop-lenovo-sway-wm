@@ -17,7 +17,7 @@ fi
 
 # Mostrar el icono/texto
 if [ "$STATUS" == "1" ]; then
-    echo "󰚥 ECO"
+    echo "󰑌"
 else
-    echo "󰂄 MAX"
+    echo "󱐋"
 fi
